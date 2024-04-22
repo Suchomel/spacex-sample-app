@@ -9,7 +9,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import cz.gemsi.spacex.R
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -20,7 +24,7 @@ fun SpaceXToolbar(
     actions: @Composable RowScope.() -> Unit = {},
 ) {
     CenterAlignedTopAppBar(
-        title = { Text(title) },
+        title = { Text(text = title, style = MaterialTheme.typography.titleMedium) },
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = MaterialTheme.colorScheme.background,
             titleContentColor = MaterialTheme.colorScheme.onBackground,
@@ -38,6 +42,7 @@ fun SpaceXToolbar(
                 }
             }
         },
-        actions = actions
+        actions = actions,
+        modifier = Modifier.shadow(elevation = 2.dp).zIndex(1f)
     )
 }

@@ -49,6 +49,8 @@ private fun NavigationHost(navController: NavHostController) {
     NavHost(
         navController = navController,
         startDestination = Route.RocketList(),
+        enterTransition = { EnterTransition.None },
+        exitTransition = { ExitTransition.None }
     ) {
         composable(Route.RocketList()) { RocketListScreen() }
         composable(Route.RocketDetail()) { RocketDetailScreen() }
