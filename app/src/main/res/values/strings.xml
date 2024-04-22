@@ -18,6 +18,8 @@
     <string name="rocketDetail_photos_title">Photos</string>
     <string name="rocketDetail_launch_button">Launch</string>
     <string name="rocketLaunch_toolbar_title">Launch</string>
+    <string name="rocketLaunch_rocketSuccess_message">Launch successfull!</string>
+    <string name="rocketLaunch_rocketIdle_message">Move your phone up to launch the rocket</string>
 
     <plurals name="rocketDetail_enginesCount_label">
         <item quantity="zero">%d engines</item>

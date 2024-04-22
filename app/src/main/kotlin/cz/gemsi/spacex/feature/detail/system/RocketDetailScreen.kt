@@ -62,28 +62,30 @@ private fun RocketDetailScreenContent(
 ) {
     val rocket = state.rocket ?: return
 
-    Column {
-        SpaceXToolbar(
-            title = rocket.rocketName,
-            onGoBack = onGoBack,
-            actions = {
-                TextButton(onClick = onLaunchClick) {
-                    Text(text = stringResource(R.string.rocketDetail_launch_button))
+    Surface {
+        Column {
+            SpaceXToolbar(
+                title = rocket.rocketName,
+                onGoBack = onGoBack,
+                actions = {
+                    TextButton(onClick = onLaunchClick) {
+                        Text(text = stringResource(R.string.rocketDetail_launch_button))
+                    }
                 }
+            )
+
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .verticalScroll(rememberScrollState())
+                    .padding(Dimensions.screenPadding)
+
+            ) {
+                OverviewSection(rocket.description)
+                ParametersSection(rocket)
+                StagesSection(rocket)
+                ImagesSection(rocket.images)
             }
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .verticalScroll(rememberScrollState())
-                .padding(Dimensions.screenPadding)
-
-        ) {
-            OverviewSection(rocket.description)
-            ParametersSection(rocket)
-            StagesSection(rocket)
-            ImagesSection(rocket.images)
         }
     }
 }

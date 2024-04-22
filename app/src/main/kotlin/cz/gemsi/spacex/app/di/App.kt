@@ -2,6 +2,7 @@ package cz.gemsi.spacex.app.di
 
 import android.app.Application
 import cz.gemsi.spacex.feature.detail.di.featureDetailModule
+import cz.gemsi.spacex.feature.launch.di.featureLaunchModule
 import cz.gemsi.spacex.feature.list.di.featureListModule
 import cz.gemsi.spacex.library.api.di.libraryApiModule
 import cz.gemsi.spacex.library.navigation.di.libraryNavigationModule
@@ -25,10 +26,11 @@ class App : Application() {
 
     private val modules = listOf(
         appModule,
+        featureDetailModule,
+        featureLaunchModule,
         featureListModule,
         libraryApiModule,
         libraryNavigationModule,
-        featureDetailModule,
         libraryRocketModule,
     )
 }
