@@ -2,6 +2,7 @@ package cz.gemsi.spacex.app.di
 
 import android.app.Application
 import cz.gemsi.spacex.feature.list.di.featureListModule
+import cz.gemsi.spacex.library.navigation.di.libraryNavigationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -22,5 +23,6 @@ class App : Application() {
     private val modules = listOf(
         appModule,
         featureListModule,
+        libraryNavigationModule,
     )
 }

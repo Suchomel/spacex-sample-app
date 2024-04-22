@@ -1,4 +1,4 @@
-package cz.gemsi.spacex.ui.theme
+package cz.gemsi.spacex.library.theme.system
 
 import androidx.compose.ui.unit.dp
 

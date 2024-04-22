@@ -1,9 +1,12 @@
 package cz.gemsi.spacex.feature.list.presentation
 
 import cz.gemsi.spacex.core.presentation.AbstractViewModel
+import cz.gemsi.spacex.library.navigation.domain.GoToRocketDetailUseCase
 import cz.gemsi.spacex.library.rocket.Rocket
 
-class RocketListViewModel : AbstractViewModel<RocketListViewModel.State>(State()) {
+class RocketListViewModel(
+    private val goToRocketDetail: GoToRocketDetailUseCase,
+) : AbstractViewModel<RocketListViewModel.State>(State()) {
 
     init {
         val rockets = listOf(
@@ -16,7 +19,7 @@ class RocketListViewModel : AbstractViewModel<RocketListViewModel.State>(State()
     }
 
     fun onRocketClick(rocket: Rocket) {
-
+        goToRocketDetail(rocket)
     }
 
     data class State(

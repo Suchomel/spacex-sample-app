@@ -28,7 +28,7 @@ import androidx.compose.ui.res.stringResource
 import cz.gemsi.spacex.R
 import cz.gemsi.spacex.feature.list.presentation.RocketListViewModel
 import cz.gemsi.spacex.library.rocket.Rocket
-import cz.gemsi.spacex.ui.theme.Dimensions
+import cz.gemsi.spacex.library.theme.system.Dimensions
 import org.koin.androidx.compose.getViewModel
 
 @Composable
