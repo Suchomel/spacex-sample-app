@@ -3,6 +3,7 @@ package cz.gemsi.spacex.library.navigation.di
 import cz.gemsi.spacex.library.navigation.data.MainNavigationRepository
 import cz.gemsi.spacex.library.navigation.domain.GoBackUseCase
 import cz.gemsi.spacex.library.navigation.domain.GoToRocketDetailUseCase
+import cz.gemsi.spacex.library.navigation.domain.GoToRocketLaunchUseCase
 import cz.gemsi.spacex.library.navigation.domain.NavigationRepository
 import cz.gemsi.spacex.library.navigation.domain.ObserveNavigationEventsUseCase
 import org.koin.core.module.dsl.factoryOf
@@ -16,5 +17,5 @@ val libraryNavigationModule = module {
     factoryOf(::ObserveNavigationEventsUseCase)
     factoryOf(::GoBackUseCase)
     factoryOf(::GoToRocketDetailUseCase)
-    factoryOf(::GoToRocketDetailUseCase)
+    factoryOf(::GoToRocketLaunchUseCase)
 }

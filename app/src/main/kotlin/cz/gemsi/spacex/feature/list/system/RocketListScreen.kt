@@ -27,7 +27,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import cz.gemsi.spacex.R
 import cz.gemsi.spacex.feature.list.presentation.RocketListViewModel
-import cz.gemsi.spacex.library.rocket.Rocket
+import cz.gemsi.spacex.library.date.system.mediumFormat
+import cz.gemsi.spacex.library.rocket.model.Rocket
 import cz.gemsi.spacex.library.theme.system.Dimensions
 import org.koin.androidx.compose.getViewModel
 
@@ -104,9 +105,9 @@ fun RocketListItem(rocket: Rocket, onClick: () -> Unit) {
         )
         Spacer(modifier = Modifier.width(Dimensions.spaceM))
         Column(modifier = Modifier.weight(1f)) {
-            Text(text = rocket.name, style = MaterialTheme.typography.titleMedium)
+            Text(text = rocket.rocketName, style = MaterialTheme.typography.titleMedium)
             Text(
-                text = stringResource(R.string.rocketList_firstFlight_text, rocket.firstFlight),
+                text = stringResource(R.string.rocketList_firstFlight_text, rocket.firstFlight.mediumFormat()),
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
                 style = MaterialTheme.typography.bodySmall
             )
