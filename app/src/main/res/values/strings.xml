@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Spacex</string>
+    <string name="rocketList_toolbar_title">Rockets</string>
+    <string name="rocketList_firstFlight_text">First flight: %s</string>
 </resources>
