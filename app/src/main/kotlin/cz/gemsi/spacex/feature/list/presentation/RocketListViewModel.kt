@@ -11,9 +11,18 @@ class RocketListViewModel(
 ) : AbstractViewModel<RocketListViewModel.State>(State()) {
 
     init {
+        onRefreshData()
+    }
+
+    fun onRefreshData() {
         launch {
-            val rockets = fetchRockets().getOrNull()
-            state = state.copy(rockets = rockets ?: state.rockets)
+            state = state.copy(isLoading = true)
+            val rockets = fetchRockets()
+            state = state.copy(
+                rockets = rockets.getOrNull() ?: state.rockets,
+                isLoading = false,
+                isError = rockets.isError(),
+            )
         }
     }
 
@@ -22,6 +31,8 @@ class RocketListViewModel(
     }
 
     data class State(
+        val isLoading: Boolean = false,
+        val isError: Boolean = false,
         val rockets: List<Rocket> = listOf()
     ) : AbstractViewModel.State
 }

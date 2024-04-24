@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Spacex</string>
+    <string name="app_name">SpaceX</string>
     <string name="rocketList_toolbar_title">Rockets</string>
     <string name="rocketList_firstFlight_text">First flight: %s</string>
     <string name="rocketDetail_meterValue_label">%dm</string>
@@ -18,8 +18,11 @@
     <string name="rocketDetail_photos_title">Photos</string>
     <string name="rocketDetail_launch_button">Launch</string>
     <string name="rocketLaunch_toolbar_title">Launch</string>
-    <string name="rocketLaunch_rocketSuccess_message">Launch successfull!</string>
+    <string name="rocketLaunch_rocketSuccess_message">Launch successful!</string>
     <string name="rocketLaunch_rocketIdle_message">Move your phone up to launch the rocket</string>
+    <string name="rocketList_failedToLoadData_errorMessage">Failed to get data. Please try again.</string>
+    <string name="rocketList_retry_button">Retry</string>
+    <string name="rocketList_rocketName_loadingPlaceholder" translatable="false">RocketName</string>
 
     <plurals name="rocketDetail_enginesCount_label">
         <item quantity="zero">%d engines</item>
